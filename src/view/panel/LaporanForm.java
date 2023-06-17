@@ -40,7 +40,7 @@ public class LaporanForm extends javax.swing.JPanel {
 //        setChart();
         setChartBar();
         setChartLine();
-        panelTable.setVisible(false);
+        panelShadow1.setVisible(false);
         panelKeuntungan.setVisible(false);
         panelPengeluaran.setVisible(false);
     }
@@ -261,6 +261,7 @@ public class LaporanForm extends javax.swing.JPanel {
     private void initComponents() {
 
         panelTable = new javax.swing.JPanel();
+        panelShadow1 = new view.swing.PanelShadow();
         jScrollPane1 = new javax.swing.JScrollPane();
         table = new view.pallet.Table();
         scrollBarCustom1 = new view.swing.ScrollBarCustom();
@@ -290,6 +291,8 @@ public class LaporanForm extends javax.swing.JPanel {
         panelTable.setBackground(new Color(0,0,0,0));
         panelTable.setPreferredSize(new java.awt.Dimension(1200, 500));
 
+        panelShadow1.setBackground(new java.awt.Color(255, 255, 255));
+
         jScrollPane1.setBackground(new Color(0,0,0,0));
         jScrollPane1.setBorder(null);
         jScrollPane1.setVerticalScrollBar(scrollBarCustom1);
@@ -307,27 +310,40 @@ public class LaporanForm extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(table);
 
-        scrollBarCustom1.setBackground(new java.awt.Color(255, 90, 0));
+        scrollBarCustom1.setForeground(new java.awt.Color(255, 90, 0));
+
+        javax.swing.GroupLayout panelShadow1Layout = new javax.swing.GroupLayout(panelShadow1);
+        panelShadow1.setLayout(panelShadow1Layout);
+        panelShadow1Layout.setHorizontalGroup(
+            panelShadow1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelShadow1Layout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addComponent(jScrollPane1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(scrollBarCustom1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(25, 25, 25))
+        );
+        panelShadow1Layout.setVerticalGroup(
+            panelShadow1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelShadow1Layout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addGroup(panelShadow1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(scrollBarCustom1, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(46, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout panelTableLayout = new javax.swing.GroupLayout(panelTable);
         panelTable.setLayout(panelTableLayout);
         panelTableLayout.setHorizontalGroup(
             panelTableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelTableLayout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(jScrollPane1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(scrollBarCustom1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(panelShadow1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(4, 4, 4))
         );
         panelTableLayout.setVerticalGroup(
             panelTableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelTableLayout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addGroup(panelTableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 427, Short.MAX_VALUE)
-                    .addComponent(scrollBarCustom1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(72, Short.MAX_VALUE))
+            .addComponent(panelShadow1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         panelGrafik.setBackground(new Color(0,0,0,0));
@@ -363,7 +379,7 @@ public class LaporanForm extends javax.swing.JPanel {
             panelGrafikLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelGrafikLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(chartBar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(chartBar, javax.swing.GroupLayout.DEFAULT_SIZE, 891, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(panelShadow3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(9, 9, 9))
@@ -478,6 +494,8 @@ public class LaporanForm extends javax.swing.JPanel {
                             .addComponent(panelGrafik, javax.swing.GroupLayout.DEFAULT_SIZE, 1340, Short.MAX_VALUE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(panelKeuntungan, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(panelPengeluaran, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(300, 300, 300)
                                         .addComponent(btnPengeluaran, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -488,10 +506,8 @@ public class LaporanForm extends javax.swing.JPanel {
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(450, 450, 450)
                                         .addComponent(btnKeuntungan, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(iconPilihan)
-                                    .addComponent(panelKeuntungan, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(panelPengeluaran, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(0, 750, Short.MAX_VALUE))))
+                                    .addComponent(iconPilihan))
+                                .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(panelTable, javax.swing.GroupLayout.DEFAULT_SIZE, 1354, Short.MAX_VALUE))
@@ -531,7 +547,7 @@ public class LaporanForm extends javax.swing.JPanel {
         pilihan = "keuntungan";
         panelGrafik.setVisible(false);
         loadTableKeuntunganBersih();
-        panelTable.setVisible(true);
+        panelShadow1.setVisible(true);
         panelKeuntungan.setVisible(true);
         panelPengeluaran.setVisible(false);
         
@@ -542,7 +558,7 @@ public class LaporanForm extends javax.swing.JPanel {
         pilihan = "pengeluaran";
         panelGrafik.setVisible(false);
         loadTableOperasional();
-        panelTable.setVisible(true);
+        panelShadow1.setVisible(true);
         panelPengeluaran.setVisible(true);
         panelKeuntungan.setVisible(false);
 
@@ -553,7 +569,7 @@ public class LaporanForm extends javax.swing.JPanel {
         pilihan = "masukan";
         panelGrafik.setVisible(false);
         loadTablePemasukan();
-        panelTable.setVisible(true);
+        panelShadow1.setVisible(true);
         panelPengeluaran.setVisible(false);
         panelKeuntungan.setVisible(false);
     }//GEN-LAST:event_btnPemasukanMouseClicked
@@ -561,7 +577,7 @@ public class LaporanForm extends javax.swing.JPanel {
     private void btnGrafikMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGrafikMouseClicked
         iconPilihan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imgbutton/laporan grafik.png")));
         pilihan = "grafik";
-        panelTable.setVisible(false);
+        panelShadow1.setVisible(false);
         panelGrafik.setVisible(true);
         panelPengeluaran.setVisible(false);
         panelKeuntungan.setVisible(false);
@@ -571,28 +587,28 @@ public class LaporanForm extends javax.swing.JPanel {
         lblIconOpsiKeuntungan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imgbutton/opsi keuntungan laba bersih.png")));
         loadTableKeuntunganBersih();
         panelGrafik.setVisible(false);
-        panelTable.setVisible(true);
+        panelShadow1.setVisible(true);
     }//GEN-LAST:event_btnLabaBersihMouseClicked
 
     private void btnLabaKotorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLabaKotorMouseClicked
         lblIconOpsiKeuntungan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imgbutton/opsi keuntungan laba kotor.png")));
         loadTableKeuntunganKotor();
         panelGrafik.setVisible(false);
-        panelTable.setVisible(true);
+        panelShadow1.setVisible(true);
     }//GEN-LAST:event_btnLabaKotorMouseClicked
 
     private void btnOperasionalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnOperasionalMouseClicked
          lblIconOpsiPengeluaran.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imgbutton/opsi pengeluaran operasional.png")));
         loadTableOperasional();
         panelGrafik.setVisible(false);
-        panelTable.setVisible(true);
+        panelShadow1.setVisible(true);
     }//GEN-LAST:event_btnOperasionalMouseClicked
 
     private void btnProduksiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProduksiMouseClicked
           lblIconOpsiPengeluaran.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imgbutton/opsi pengeluaran produksi.png")));
         loadTableProduksi();
         panelGrafik.setVisible(false);
-        panelTable.setVisible(true);
+        panelShadow1.setVisible(true);
     }//GEN-LAST:event_btnProduksiMouseClicked
 
 
@@ -617,6 +633,7 @@ public class LaporanForm extends javax.swing.JPanel {
     private javax.swing.JPanel panelGrafik;
     private javax.swing.JPanel panelKeuntungan;
     private javax.swing.JPanel panelPengeluaran;
+    private view.swing.PanelShadow panelShadow1;
     private raven.panel.PanelShadow panelShadow3;
     private javax.swing.JPanel panelTable;
     private view.swing.ScrollBarCustom scrollBarCustom1;

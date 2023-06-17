@@ -30,7 +30,7 @@ public class Dasboard extends javax.swing.JPanel {
         initComponents();
         apa.addMouseListener(new MouseAdapter() {
     @Override
-    public void mouseExited(MouseEvent e) {
+    public void mouseEntered(MouseEvent e) {
         int mouseX = e.getX();
         int mouseY = e.getY();
         if (mouseX >= 0 && mouseX <= apa.getWidth() && mouseY >= 0 && mouseY <= apa.getHeight()) {
@@ -247,7 +247,7 @@ public class Dasboard extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabel2MouseEntered
 
     private void jLabel2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseExited
-    hilangtampilan();
+//    hilangtampilan();
     }//GEN-LAST:event_jLabel2MouseExited
 
 
